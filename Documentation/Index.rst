@@ -4,7 +4,7 @@
 .. _start:
 
 ========================
-Cart - Basket Image
+Cart - Basket Information
 ========================
 
 :Version:
@@ -31,14 +31,7 @@ Cart - Basket Image
 
 **What does it do?**
 
-Allow to display an image into the basket
-
-
-**Screenshots**
-
-- Display the image like this
-
-|basket_image|
+Allow to show more information into the basket
 
 
 Basket-Template
@@ -50,8 +43,10 @@ Sample for the Template
 ::
 
     <f:if condition="{product.additionalArray.details}">
-        <div class="product-details">
-
+        <div class="content--categorie">
+            <f:for each="{product.additionalArray.details.tags}" as="tag" iteration="iterator">
+                <h4>{tag.title}</h4>
+            </f:for>
         </div>
     </f:if>
 

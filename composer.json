@@ -1,7 +1,7 @@
 {
-  "name": "Klickfabrik/CartBasketImage",
+  "name": "Klickfabrik/CartBasketInformation",
   "type": "typo3-cms-extension",
-  "description": "Shopping Cart(s) for TYPO3 - Basket Image",
+  "description": "Shopping Cart(s) for TYPO3 - Basket Information",
   "homepage": "https://klickfabrik.net",
   "license": [
     "GPL-2.0-or-later"
