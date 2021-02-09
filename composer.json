@@ -1,0 +1,31 @@
+{
+  "name": "Klickfabrik/CartBasketImage",
+  "type": "typo3-cms-extension",
+  "description": "Shopping Cart(s) for TYPO3 - Basket Image",
+  "homepage": "https://klickfabrik.net",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "keywords": [
+    "TYPO3 CMS",
+    "Shopping Cart",
+    "cart",
+    "products",
+    "Basket Image"
+  ],
+  "authors": [
+    {
+      "name": "Marc finnern",
+      "email": "typo3@klickfabrik.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "typo3/cms-core": "^9.5",
+    "php": "^7.2 <7.5",
+    "ext-pdo": "*",
+    "typo3/cms-extbase": "^9.5",
+    "typo3/cms-fluid": "^9.5",
+    "extcode/cart": "^6.0"
+  }
+}
