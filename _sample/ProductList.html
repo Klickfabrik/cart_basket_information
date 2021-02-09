@@ -4,38 +4,58 @@
 
 <f:section name="withoutVariant">
     <tr class="{f:if(condition: product.quantityIsInRange, then: '', else: 'danger')}">
-        <td colspan="2" class="col-md-6">
-
-
-            <!-- BASKET IMAGE -->
-            <f:if condition="{product.additionalArray.details}">
-                <div class="product-image">
-                    <f:link.action extensionName="CartProducts" pluginName="products" pageUid="58" arguments="{product: product.productId}">
-                        <f:image src="{product.additionalArray.image}" height="400c" alt="{product.title}" class="img-fluid"/>
-                    </f:link.action>
+        <td colspan="2" class="col-md-7">
+            <div class="product--details">
+                <f:if condition="{product.additionalArray.image}">
+                    <div class="product--details--image">
+                        <f:link.action extensionName="CartProducts" pluginName="products" pageUid="58" arguments="{product: product.productId}">
+                            <f:image src="{product.additionalArray.image}" height="164c" width="164c" alt="{product.title}" class="img-fluid"/>
+                        </f:link.action>
+                    </div>
+                </f:if>
+                <div class="product--details--infos">
+                    <div class="inner">
+                        <f:if condition="{product.additionalArray.details}">
+                            <div class="content--categorie">
+                                <f:for each="{product.additionalArray.details.tags}" as="tag" iteration="iterator">
+                                    <h4>{tag.title}</h4>
+                                </f:for>
+                            </div>
+                        </f:if>
+                        <div class="content--headline">
+                            <f:link.action extensionName="CartProducts" pluginName="products" pageUid="58" arguments="{product: product.productId}">
+                                <h3>{product.title} {f:if(condition:'{product.feVariant.value}',then:'- {product.feVariant.value}')}</h3>
+                            </f:link.action>
+                        </div>
+                        <f:if condition="{product.additionalArray.details}">
+                            <div class="content--teaser d-none">
+                                <f:format.raw>{product.additionalArray.details.teaser}</f:format.raw>
+                            </div>
+                        </f:if>
+                    </div>
                 </div>
-            </f:if>
-            <!-- BASKET IMAGE -->
-
-            <div class="product-name">
-                <f:link.action extensionName="CartProducts" pluginName="products" pageUid="58" arguments="{product: product.productId}">
-                    {product.title} {f:if(condition:'{product.feVariant.value}',then:'- {product.feVariant.value}')}
+            </div>
+            <div class="remove">
+                <f:link.action controller="Cart\Product" action="remove" arguments="{product: product.id}">
+                    <span class="delete-link" title="<f:translate key='tx_cart.remove_product'/>"><i class="fa fa-trash"></i> <f:translate key='tx_cart.remove_product'/></span>
                 </f:link.action>
             </div>
-            <p>
-                <f:translate key="tx_cart_domain_model_order_product.sku.short"/>
-                : {product.sku}
-            </p>
+            <div class="article_id d-none">
+                <f:translate key="tx_cart_domain_model_order_product.sku.short"/> : {product.sku}
+            </div>
         </td>
-        <td class="col-md-2 text-right">
+        <div class="product--order">
+
+        </div>
+        <td class="col-md-1 text-right">
+            <f:form.textfield class="form-control form-control-inline" type="text" value="{product.quantity}" name="quantities[{product.id}]"/>
+        </td>
+        <td class="col-md-1 text-right">
             <span class="price">
                 <cart:format.currency currencySign="{cart.currencySign}">{product.bestPrice}</cart:format.currency>
             </span>
         </td>
-        <td class="col-md-1 text-right">
-            <f:form.textfield class="form-control form-control-inline" type="text" value="{product.quantity}" name="quantities[{product.id}]"/>
-        </td>
-        <td class="col-md-2 text-right">
+        <td class="col-md-3 text-right">
             <f:if condition="{product.quantityIsInRange}">
                 <f:then>
                     <cart:format.currency currencySign="{cart.currencySign}">{product.gross}</cart:format.currency>
@@ -49,11 +69,6 @@
                     </f:if>
                 </f:else>
             </f:if>
-        </td>
-        <td class="last col-md-1 text-right">
-            <f:link.action controller="Cart\Product" action="remove" arguments="{product: product.id}">
-                <span class="delete-link btn btn-danger" title="<f:translate key='tx_cart.remove_product'/>">x</span>
-            </f:link.action>
         </td>
     </tr>
 </f:section>
@@ -75,9 +90,6 @@
                         : {variant.completeSku}
                     </p>
                 </td>
-                <td class="col-md-2 text-right">
-                    <cart:format.currency currencySign="{cart.currencySign}">{variant.bestPriceCalculated}</cart:format.currency>
-                </td>
                 <td class="col-md-1">
                     <div class="qty-wrapper">
                         <f:form.textfield
@@ -86,6 +98,9 @@
                                 value="{variant.quantity}"
                                 name="quantities{cart:fieldName(variant:variant)}"/>
                     </div>
+                </td>
+                <td class="col-md-2 text-right">
+                    <cart:format.currency currencySign="{cart.currencySign}">{variant.bestPriceCalculated}</cart:format.currency>
                 </td>
                 <td class="col-md-2 text-right">
                     <f:if condition="{product.quantityIsInRange}">
@@ -119,18 +134,10 @@
                 {product.title} {f:if(condition:'{product.feVariant.value}',then:'- {product.feVariant.value}')}
             </div>
         </td>
-        <td class="text-right">
-            &nbsp;
-        </td>
-        <td class="a-center">
-            &nbsp;
-        </td>
-        <td class="text-right">
-            &nbsp;
-        </td>
-        <td class="last">
-            &nbsp;
-        </td>
+        <td class="text-right"> </td>
+        <td class="a-center">  </td>
+        <td class="text-right"> </td>
+        <td class="last"> </td>
     </tr>
 
     <f:for each="{product.beVariants}" as="variant">
@@ -138,12 +145,8 @@
     </f:for>
 
     <tr class="{f:if(condition: product.quantityIsInRange, then: '', else: 'danger')}">
-        <td colspan="2">
-            &nbsp;
-        </td>
-        <td class="text-right">
-            &nbsp;
-        </td>
+        <td colspan="2"> </td>
+        <td class="text-right"> </td>
         <td class="a-center">
             <div class="qty-wrapper">
                 {product.quantity}
@@ -156,14 +159,11 @@
                 </f:then>
             </f:if>
         </td>
-        <td class="last">
-            &nbsp;
-        </td>
+        <td class="last"> </td>
     </tr>
 </f:section>
 
 <f:for each="{products}" as="product">
     <f:render section="withoutVariant" arguments="{cart:cart, product:product}"/>
-
 </f:for>
 </html>
