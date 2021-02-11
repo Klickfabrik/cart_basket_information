@@ -15,6 +15,8 @@
                 </f:if>
                 <div class="product--details--infos">
                     <div class="inner">
+
+                        <!-- BASKET MORE INFORMATEN -->
                         <f:if condition="{product.additionalArray.details}">
                             <div class="content--categorie">
                                 <f:for each="{product.additionalArray.details.tags}" as="tag" iteration="iterator">
@@ -22,16 +24,21 @@
                                 </f:for>
                             </div>
                         </f:if>
+                        <!-- BASKET MORE INFORMATEN -->
+
                         <div class="content--headline">
                             <f:link.action extensionName="CartProducts" pluginName="products" pageUid="58" arguments="{product: product.productId}">
                                 <h3>{product.title} {f:if(condition:'{product.feVariant.value}',then:'- {product.feVariant.value}')}</h3>
                             </f:link.action>
                         </div>
+
+                        <!-- BASKET MORE INFORMATEN -->
                         <f:if condition="{product.additionalArray.details}">
                             <div class="content--teaser d-none">
                                 <f:format.raw>{product.additionalArray.details.teaser}</f:format.raw>
                             </div>
                         </f:if>
+                        <!-- BASKET MORE INFORMATEN -->
                     </div>
                 </div>
             </div>

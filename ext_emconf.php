@@ -12,7 +12,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Cart - Basket Information',
+    'title' => 'Cart - Basket Product Information',
     'description' => 'Allow to display more information into the basket',
     'category' => 'plugin',
     'author' => 'Marc Finnern',
@@ -21,12 +21,12 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => 1,
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '1.0.1',
+    'version' => '1.0.2',
     'constraints' => [
         'depends' => [
-            'typo3' => '7.6.0-9.5.99',
-            'cart' => '6.0.0',
-            'cart_products' => '2.3.0'
+            'typo3' => '7.6.0-10.4.99',
+            'cart' => '6.0.0-7.9.99',
+            'cart_products' => '2.3.0-3.9.99'
         ],
         'conflicts' => [],
         'suggests' => [],

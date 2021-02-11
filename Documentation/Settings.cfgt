@@ -1,12 +1,10 @@
 [general]
 
-project     = Shopping Cart(s) - Basket Product Information for TYPO3
+project     = {extension.name}
 
-release     = 1.0.2
+release     = {extension.version}
 
-copyright   = by Marc Finnern
-
-t3author    = 2021 by Marc Finnern
+copyright   = by <f:for each="{extension.persons}" as="person" iteration="counter"><f:if condition="{counter.index} > 0">, </f:if>{person.name}</f:for>
 
 [html_theme_options]
 

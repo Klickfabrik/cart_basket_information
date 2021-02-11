@@ -1,33 +1,39 @@
+.. every .rst file should include Includes.txt
+.. use correct path!
+
 .. include:: Includes.txt
-.. include:: Images.txt
+
+.. Every manual should have a start label for cross-referencing to
+.. start page. Do not remove this!
 
 .. _start:
 
-========================
+=============================================================
 Cart - Basket Information
-========================
+=============================================================
 
 :Version:
-      |release|
+   |release|
 
 :Language:
-      en
+   en
 
 :Keywords:
-       cart, cart_products, image, basket
+   cart, cart_products, product_information, basket
 
 :Copyright:
-      2021
+   2021
 
 :Authors:
-      TYPO3 community (see :ref:`credits`)
+   Marc Finnern
+
+:Email:
+   marc@klickfabrik.net
 
 :License:
-      Open Publication License available from `www.opencontent.org/openpub/
-      <http://www.opencontent.org/openpub/>`_
-
-
-
+   This extension documentation is published under the
+   `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
+   license
 
 **What does it do?**
 
@@ -49,4 +55,3 @@ Sample for the Template
             </f:for>
         </div>
     </f:if>
-
