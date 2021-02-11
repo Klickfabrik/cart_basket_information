@@ -55,3 +55,21 @@ Sample for the Template
             </f:for>
         </div>
     </f:if>
+
+
+
+Basket-Fields with Typoscript
+
+::
+
+    plugin.tx_cart {
+        settings {
+            basketFields {
+                #single field(s) - seperate with ,
+                details = teaser,description
+
+                #fullproduct
+                product = all
+            }
+        }
+    }
