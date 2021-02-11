@@ -1,7 +1,7 @@
 {
   "name": "Klickfabrik/CartBasketInformation",
   "type": "typo3-cms-extension",
-  "description": "Shopping Cart(s) for TYPO3 - Basket Information",
+  "description": "Shopping Cart(s) for TYPO3 - Basket Product Information",
   "homepage": "https://klickfabrik.net",
   "license": [
     "GPL-2.0-or-later"
@@ -11,7 +11,7 @@
     "Shopping Cart",
     "cart",
     "products",
-    "Basket Image"
+    "Basket Product Information"
   ],
   "authors": [
     {
@@ -21,11 +21,10 @@
     }
   ],
   "require": {
-    "typo3/cms-core": "^9.5",
+    "typo3/cms-core": "^9.5.17 || ^10.4.2",
     "php": "^7.2 <7.5",
     "ext-pdo": "*",
-    "typo3/cms-extbase": "^9.5",
-    "typo3/cms-fluid": "^9.5",
-    "extcode/cart": "^6.0"
+    "extcode/cart": "^6.0 || ^7.0",
+    "extcode/cart_products": "^2.0 || ^3.0"
   }
 }

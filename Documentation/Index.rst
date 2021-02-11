@@ -1,10 +1,10 @@
-.. every .rst file should include Includes.txt
-.. use correct path!
+.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
 
 .. include:: Includes.txt
 
-.. Every manual should have a start label for cross-referencing to
-.. start page. Do not remove this!
 
 .. _start:
 
@@ -12,64 +12,43 @@
 Cart - Basket Information
 =============================================================
 
-:Version:
-   |release|
+.. only:: html
 
-:Language:
-   en
+	:Classification:
+		news
 
-:Keywords:
-   cart, cart_products, product_information, basket
+	:Version:
+		|release|
 
-:Copyright:
-   2021
+	:Language:
+		en
 
-:Authors:
-   Marc Finnern
+	:Keywords:
+		cart, cart_products, product_information, basket
 
-:Email:
-   marc@klickfabrik.net
+	:Copyright:
+		2021
 
-:License:
-   This extension documentation is published under the
-   `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`__ (Creative Commons)
-   license
+	:Author:
+		Marc Finnern
 
-**What does it do?**
+    :Email:
+       marc@klickfabrik.net
 
-Allow to show more information into the basket
+	:License:
+		This document is published under the Open Content License
+		available from http://www.opencontent.org/opl.shtml
 
-
-Basket-Template
----------------
-- File: ProductList.html
-
-Sample for the Template
-
-::
-
-    <f:if condition="{product.additionalArray.details}">
-        <div class="content--categorie">
-            <f:for each="{product.additionalArray.details.tags}" as="tag" iteration="iterator">
-                <h4>{tag.title}</h4>
-            </f:for>
-        </div>
-    </f:if>
+	:Rendered:
+		|today|
 
 
+	**Table of Contents**
 
-Basket-Fields with Typoscript
+.. toctree::
+	:maxdepth: 3
+	:titlesonly:
+	:glob:
 
-::
-
-    plugin.tx_cart {
-        settings {
-            basketFields {
-                #single field(s) - seperate with ,
-                details = teaser,description
-
-                #fullproduct
-                product = all
-            }
-        }
-    }
+   Template
+   Typoscript
